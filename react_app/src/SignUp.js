@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  const [selectedProfession, setSelectedProfession] = useState("");
+
+  const handleChange = (e) => {
+    setSelectedProfession(e.target.value);
+  };
+  useEffect(() => {
+    setSelectedProfession("");
+  }, []);
+
   return (
     <div
       className="w-screen h-screen bg-blue-200"
@@ -17,8 +26,8 @@ const SignUp = () => {
             Sunday
           </a>
         </div>
-        
-        <div className="py-[2rem] px-[1.7rem]">
+
+        <div className="py-[1rem] px-[1.7rem]">
           <div>
             <input
               type="text"
@@ -29,14 +38,14 @@ const SignUp = () => {
           <div className="py-[1rem]">
             <input
               type="text"
-              placeholder="Password"
+              placeholder="Phone Number"
               className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
             />
           </div>
           <div className="">
             <input
               type="text"
-              placeholder="Phone Number"
+              placeholder="Password"
               className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
             />
           </div>
@@ -47,7 +56,22 @@ const SignUp = () => {
               className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
             />
           </div>
-          <div className="absolute py-[0.5rem]">
+          <div className="-ml-[0.8rem] px-[2.2rem]">
+            <select
+              className="bg-white rounded-3xl py-[0.4rem] text-center w-auto"
+              value={selectedProfession} 
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+               Select Profession
+              </option>
+              <option value="student">Student</option>
+              <option value="freelancer">Freelancer</option>
+              <option value="jobholder">Jobholder</option>
+            
+            </select>
+          </div>
+          <div className="absolute py-[1.2rem]">
             <Link
               to="/"
               className="bg-emerald-200 hover:bg-emerald-300 rounded-3xl px-[4rem] py-[0.5rem]"
