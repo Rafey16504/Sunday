@@ -12,7 +12,8 @@ const App = () => {
         backgroundPosition: "bottom right",
       }}
     >
-      <div className=" py-[6rem] px-[4.5rem]">
+      <div className="flex flex-row justify-center items-center h-full w-full">
+      <div className="w-3/5 h-4/6">  
         <div>
           <a className="flex font-shalimar text-[9rem] text-cyan-800 text-opacity-100 md:text-6xl lg:text-xl font-bold tracking-wides z-10">
             Sunday
@@ -55,6 +56,8 @@ const App = () => {
           </div>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };
