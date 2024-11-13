@@ -4,45 +4,37 @@ import "./index.css";
 
 const App = () => {
   return (
-    <div
-      className="w-screen h-screen bg-blue-200"
-      style={{
-        backgroundImage: "url(./background.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "bottom right",
-      }}
-    >
-      <div className="flex flex-row justify-center items-center h-full w-full">
-        <div className="w-2/12 h-4/6">
-          <a className="font-shalimar text-[9rem] text-cyan-800 text-opacity-100 md:text-6xl lg:text-xl font-bold tracking-wider">
+    <div className="w-screen h-screen flex items-center justify-center">
+      <div
+        className="w-full h-full bg-blue-200 flex items-center justify-center"
+        style={{
+          backgroundImage: "url(./background.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom right",
+        }}
+      >
+        <div className="flex flex-col h-4/6 md:h-3/4 lg:h-3/4 items-center space-y-6 w-full max-w-sm">
+          <a className="font-shalimar text-[10rem] text-cyan-800 font-bold tracking-wider -mb-6">
             Sunday
           </a>
-        </div>
-        <div className="space-y-3 w-7/12">
-          <div className="">
+          <div className="space-y-3 w-9/12 md:w-7/12 lg:w-8/12 flex flex-col items-center">
             <input
               type="text"
-              placeholder="Username"
-              className="bg-white rounded-3xl px-[0.5rem] py-[0.4rem] text-center"
+              placeholder="Email"
+              className="bg-white rounded-3xl px-[0.5rem] py-[0.5rem] text-center w-11/12 md:w-full lg:w-full"
             />
-          </div>
-          <div className="">
             <input
-              type="text"
+              type="password"
               placeholder="Password"
-              className="bg-white rounded-3xl px-[0.5rem] py-[0.4rem] text-center"
+              className="bg-white rounded-3xl px-[0.5rem] py-[0.5rem] text-center w-11/12 md:w-full lg:w-full"
             />
-          </div>
-          <div className="">
             <Link
               to="/"
               className="bg-emerald-200 hover:bg-emerald-300 rounded-3xl px-[4.6rem] py-[0.3rem]"
             >
               Sign in
             </Link>
-          </div>
-          <div className="ml-5">
-            <p>
+            <p className="text-center">
               No account?{" "}
               <Link to="/signup" className="underline hover:text-blue-500">
                 Sign up

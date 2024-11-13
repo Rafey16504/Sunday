@@ -7,79 +7,62 @@ const SignUp = () => {
   const handleChange = (e) => {
     setSelectedProfession(e.target.value);
   };
+
   useEffect(() => {
     setSelectedProfession("");
   }, []);
 
   return (
     <div
-      className="w-screen h-screen bg-blue-200"
+      className="w-screen h-screen flex items-center justify-center bg-blue-200"
       style={{
         backgroundImage: "url(./background.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "bottom right",
       }}
     >
-      <div className=" py-[6rem] px-[5rem]">
-        <div>
-          <a className="flex font-shalimar text-[9rem] -ml-[0.5rem] text-cyan-800 text-opacity-100 md:text-6xl lg:text-xl font-bold tracking-wides z-10">
-            Sunday
-          </a>
-        </div>
-
-        <div className="py-[1rem] px-[1.7rem]">
-          <div>
-            <input
-              type="text"
-              placeholder="Username"
-              className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
-            />
-          </div>
-          <div className="py-[1rem]">
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
-            />
-          </div>
-          <div className="">
-            <input
-              type="text"
-              placeholder="Password"
-              className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
-            />
-          </div>
-          <div className="py-[1rem]">
-            <input
-              type="text"
-              placeholder="Email"
-              className="bg-white rounded-3xl -ml-[0.5rem] px-[0.5rem] py-[0.4rem] text-center"
-            />
-          </div>
-          <div className="-ml-[0.8rem] px-[2.2rem]">
-            <select
-              className="bg-white rounded-3xl py-[0.4rem] text-center w-auto"
-              value={selectedProfession} 
-              onChange={handleChange}
-            >
-              <option value="" disabled>
-               Select Profession
-              </option>
-              <option value="student">Student</option>
-              <option value="freelancer">Freelancer</option>
-              <option value="jobholder">Jobholder</option>
-            
-            </select>
-          </div>
-          <div className="absolute py-[1.2rem]">
-            <Link
-              to="/"
-              className="bg-emerald-200 hover:bg-emerald-300 rounded-3xl px-[4rem] py-[0.5rem]"
-            >
-              Sign up
-            </Link>
-          </div>
-        </div>
+      <div className="flex flex-col items-center space-y-6 p-[2rem] rounded-lg max-w-md w-full">
+        <a className="font-shalimar text-[10rem] text-cyan-800 font-bold tracking-wider -mb-6">
+          Sunday
+        </a>
+        <input
+          type="text"
+          placeholder="Name"
+          className="bg-white rounded-3xl px-[1rem] py-[0.5rem] text-center w-5/6 lg:w-4/6 "
+        />
+        <input
+          type="text"
+          placeholder="Phone Number"
+          className="bg-white rounded-3xl px-[1rem] py-[0.5rem] text-center w-5/6 lg:w-4/6"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="bg-white rounded-3xl px-[1rem] py-[0.5rem] text-center w-5/6 lg:w-4/6"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          className="bg-white rounded-3xl px-[1rem] py-[0.5rem] text-center w-5/6 lg:w-4/6"
+        />
+        <select
+          className="bg-white rounded-3xl py-[0.5rem] text-center w-5/6 lg:w-4/6"
+          value={selectedProfession}
+          onChange={handleChange}
+        >
+          <option value="" disabled>
+            Select Profession
+          </option>
+          <option value="student">Student</option>
+          <option value="freelancer">Freelancer</option>
+          <option value="jobholder">Jobholder</option>
+        </select>
+        <Link
+          to="/"
+          className="bg-emerald-200 hover:bg-emerald-300 rounded-3xl px-16 py-2 text-center"
+        >
+          Sign up
+        </Link>
       </div>
     </div>
   );
